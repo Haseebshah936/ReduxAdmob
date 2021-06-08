@@ -19,7 +19,7 @@
     "ios": {
       "supportsTablet": true,
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-6922822810592227~3375115876" 
+        "googleMobileAdsAppId": "ca-app-pub-6922822810592227~3375115876"
       }
     },
     "android": {
@@ -28,11 +28,13 @@
         "backgroundColor": "#FFFFFF"
       },
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-6922822810592227~6255117004" 
+        "googleMobileAdsAppId": "ca-app-pub-6922822810592227~6255117004"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/Haseebshah936/ReduxAdmob"
   }
 }

@@ -10,25 +10,22 @@ import {
   AdMobRewarded,
   setTestDeviceIDAsync,
 } from "expo-ads-admob";
+import { android, ios } from "../../APIKeys";
 
 function ScreenB(props) {
   const store = useSelector((state) => state);
   const [loaded, setLoaded] = useState(true);
   const dispatch = useDispatch();
-  const iosRewardedInterstitialAdID = "ca-app-pub-6922822810592227/3066627130";
-  const androidRewardedInterstitialAdID =
-    "ca-app-pub-6922822810592227/6048013695";
+  const iosRewardedInterstitialAdID = ios.iosRewardedInterstitialAd;
+  const androidRewardedInterstitialAdID = android.androidRewardedInterstitialAd;
   const rewardedVideoID = Platform.select({
-    ios: "ca-app-pub-6922822810592227/4126565542",
-    android: "ca-app-pub-6922822810592227/5652481770",
+    ios: ios.iosRewardedVideoID,
+    android: android.androidRewardedVideoID,
   });
   // const iosRewardedAdID = ;
   // const androidRewardedAdID = ;
-
   const interstitialID =
-    Platform.OS === "ios"
-      ? "ca-app-pub-6922822810592227/8058071694"
-      : "ca-app-pub-6922822810592227/8853360187";
+    Platform.OS === "ios" ? ios.admobInterstitial : android.admobInterstitial;
 
   const rewardedVideo = async () => {
     setLoaded(false);

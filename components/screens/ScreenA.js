@@ -9,6 +9,7 @@ import {
   setTestDeviceIDAsync,
 } from "expo-ads-admob";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { android, ios } from "../../APIKeys";
 
 function ScreenA(props) {
   const store = useSelector((state) => state);
@@ -19,22 +20,9 @@ function ScreenA(props) {
   // const iosInterstitialAdID = ;
   // await setTestDeviceIDAsync("EMULATOR");
   const bannerID =
-    Platform.OS === "ios"
-      ? "ca-app-pub-6922822810592227/1593763364"
-      : "ca-app-pub-6922822810592227/9811218634";
-  const interstitialID =
-    Platform.OS === "ios"
-      ? "ca-app-pub-6922822810592227/8058071694"
-      : "ca-app-pub-6922822810592227/8853360187";
-
-  useEffect(() => {
+    Platform.OS === "ios" ? ios.admobBanner : android.admobBanner;
+  const interstitialID = useEffect(() => {
     (async () => {
-      // await AdMobInterstitial.setAdUnitID(interstitialID);
-      // await AdMobInterstitial.requestAdAsync({
-      //   servePersonalizedAds: true,
-      // }).catch(console.log);
-      // if (await AdMobInterstitial.getIsReadyAsync().valueOf)
-      //   await AdMobInterstitial.showAdAsync();
       await AsyncStorage.setItem("shot", JSON.stringify(store));
     })();
   }, [store]);
